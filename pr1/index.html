@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us form</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="contact-form">
+      <div class="left-form-side">
+        <div class="form-title-container">
+          <h2 class="form-title poppins-font">Contact Information</h2>
+          <h2 class="form-description poppins-font">Say something to start a live chat!</h2>
+        </div>
+
+        <div class="contacts-container">
+          <div class="contacts-element poppins-font">
+              <span class="contacts-text phone-icon">+1012 3456 789</span>
+          </div>
+
+          <div class="contacts-element poppins-font">
+              <span class="contacts-text mail-icon">demo@gmail.com</span>
+          </div>
+
+          <div class="contacts-element poppins-font">
+            <span class="contacts-text geo-icon">132 Dartmouth Street Boston, <br></span>
+            <span class="contacts-text text-indent">Massachusetts 02156 United States</span>
+          </div>
+        </div>
+
+        <div class="social-media-container">
+          <a href="#"><span class="social-media twitter"></span></a>
+          <a href="#"><span class="social-media instagram"></span></a>
+          <a href="#"><span class="social-media discord"></span></a>
+        </div>
+      </div>
+
+      <div class="right-form-side">
+        <form class="form" autocomplete="off">
+          <div class="person-info">
+            <div class="person-info-element">
+              <input type="text" class="textbox short poppins-font" id="first-name" name="first-name" placeholder="Jane"
+                     autocomplete="off" required>
+              <label for="first-name" class="textbox-label poppins-font">First Name</label>
+            </div>
+
+            <div class="person-info-element">
+              <input type="text" class="textbox short poppins-font" id="last-name" name="last-name" placeholder="Doe"
+                     autocomplete="off" required>
+              <label for="last-name" class="textbox-label poppins-font">Last Name</label>
+            </div>
+
+            <div class="person-info-element">
+              <input type="email" class="textbox short poppins-font" id="email" name="email"
+                     placeholder="example@gmail.com" autocomplete="off" required>
+              <label for="email" class="textbox-label poppins-font">Email</label>
+            </div>
+
+            <div class="person-info-element">
+              <input type="text" class="textbox short poppins-font" id="phone-number" name="phone-number"
+                     placeholder="+1 012 3456 789" autocomplete="off" required>
+              <label for="phone-number" class="textbox-label poppins-font">Phone Number</label>
+            </div>
+          </div>
+
+          <div class="subject-info">
+            <div class="subject-question-div">
+              <label class="subject-question poppins-font">Select Subject?</label><br>
+            </div>
+
+            <span class="subject-element">
+              <input type="radio" class="subject-radio poppins-font" id="subject1" name="subject">
+              <label for="subject1" class="subject poppins-font">General Inquiry</label>
+            </span>
+
+            <span class="subject-element">
+              <input type="radio" class="subject-radio poppins-font" id="subject2" name="subject">
+              <label for="subject2" class="subject poppins-font">General Inquiry</label>
+            </span>
+
+            <span class="subject-element">
+              <input type="radio" class="subject-radio poppins-font" id="subject3" name="subject">
+              <label for="subject3" class="subject poppins-font">General Inquiry</label>
+            </span>
+
+            <span class="subject-element">
+              <input type="radio" class="subject-radio poppins-font" id="subject4" name="subject">
+              <label for="subject4" class="subject poppins-font">General Inquiry</label>
+            </span>
+          </div>
+
+          <div class="message-info">
+            <input type="text" id="message" class="textbox long poppins-font" name="message" placeholder="Write your message.." required>
+            <label for="message" class="textbox-label poppins-font">Message</label>
+          </div>
+
+          <div class="button-image-container">
+            <div class="image-container">
+              <img src="icons/letter_send.png" alt="" class="corner-image">
+            </div>
+            <input type="submit" value="Send Message" class="send-button">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
