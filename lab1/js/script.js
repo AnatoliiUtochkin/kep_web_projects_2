@@ -1,9 +1,16 @@
 /* 3.3 */
+let counter = 0;
+
 const button_3_3 = document.getElementById("3-3-button");
 button_3_3.onclick = function () {
-    alert("Нажміть ОК.");
+    if (counter === 0) {
+        alert("Нажміть ОК.");
 
-    button_3_3.after("<h1>Hello, world!</h1>");
+
+
+        button_3_3.after("Hello, world!");
+        counter++;
+    }
 }
 
 /* 3.4 - 3.5 */
