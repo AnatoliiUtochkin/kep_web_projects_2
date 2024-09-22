@@ -1,0 +1,75 @@
+body {
+    color: white;
+    background-color: #5d7adf;
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+    background-color: #838383;
+    color: white;
+    margin-left: 15px;
+}
+
+.lab_name {
+    text-align: center;
+    font-size: 48px;
+    margin-top: 24px;
+    color: white;
+}
+
+.task_number {
+    font-size: 40px;
+    text-align: center;
+}
+
+.big_container {
+    display: flex;
+}
+
+.lab_container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 50%;
+    flex-wrap: wrap;
+    border: 1px solid #011C2A;
+    margin-right: 5px;
+}
+
+.lab_container_2 {
+    width: 50%;
+    border: 1px solid #011C2A;
+}
+
+.lab_container_2 h2 {
+    font-size: 44px;
+    margin-left: 10px;
+}
+
+.lab_container_2 ul li {
+    font-size: 30px;
+}
+
+.lab_container_2 table {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-left: 30px;
+    height: 600px;
+    width: 600px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.lab_block {
+    background-color: #465e8a;
+    border: 1px solid #011C2B;
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 250px;
+}
