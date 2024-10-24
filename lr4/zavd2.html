@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблиця множення</title>
+    <script>
+        let score = 0;
+
+        function generateTask() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            document.getElementById("task").innerHTML = `${num1} x ${num2} = ?`;
+            document.getElementById("correctAnswer").value = num1 * num2;
+        }
+
+        function checkAnswer() {
+            const answer = document.getElementById("answer").value;
+            const correctAnswer = document.getElementById("correctAnswer").value;
+            if (answer == correctAnswer) {
+                score++;
+                document.getElementById("result").innerHTML = "Правильно!";
+            } else {
+                document.getElementById("result").innerHTML = "Неправильно!";
+            }
+            document.getElementById("score").innerHTML = `Рахунок: ${score}`;
+        }
+    </script>
+</head>
+<body onload="generateTask()">
+    <div id="task"></div>
+    <input type="hidden" id="correctAnswer">
+    <input type="number" id="answer">
+    <button onclick="checkAnswer()">Перевірити</button>
+    <div id="result"></div>
+    <button onclick="generateTask()">Наступне завдання</button>
+    <div id="score">Рахунок: 0</div>
+</body>
+</html>

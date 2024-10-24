@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>CAPTCHA</title>
+    <style>
+        .pixel {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 1px;
+            background-color: red;
+        }
+        .digit {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        #captchaDisplay {
+            font-size: 0; /* Приховує зайвий простір між блоками */
+        }
+        #captchaInput {
+            font-size: 24px;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            width: 80px;
+        }
+        #captchaResult {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        let captchaCode;
+
+        function initCaptcha(length) {
+            captchaCode = '';
+            for (let i = 0; i < length; i++) {
+                captchaCode += Math.floor(Math.random() * 10);
+            }
+            generateCaptchaDisplay(captchaCode);
+        }
+
+        function generateCaptchaDisplay(code) {
+            const captchaDisplay = document.getElementById('captchaDisplay');
+            captchaDisplay.innerHTML = ''; // Очищення попереднього вмісту
+            for (let i = 0; i < code.length; i++) {
+                let number = code[i];
+                let digitContainer = document.createElement('div');
+                digitContainer.className = 'digit';
+                let numberPixels = getNumberPixels(number);
+                numberPixels.forEach(function(row) {
+                    row.forEach(function(pixel) {
+                        const span = document.createElement('span');
+                        span.className = 'pixel';
+                        span.style.backgroundColor = pixel ? 'red' : 'transparent';
+                        digitContainer.appendChild(span);
+                    });
+                    const br = document.createElement('br');
+                    digitContainer.appendChild(br);
+                });
+                captchaDisplay.appendChild(digitContainer);
+            }
+        }
+
+        function getNumberPixels(number) {
+            const pixelNumbers = {
+                '0': [
+                    [1, 1, 1],
+                    [1, 0, 1],
+                    [1, 0, 1],
+                    [1, 0, 1],
+                    [1, 1, 1]
+                ],
+                '1': [
+                    [0, 1, 0],
+                    [1, 1, 0],
+                    [0, 1, 0],
+                    [0, 1, 0],
+                    [1, 1, 1]
+                ],
+                '2': [
+                    [1, 1, 1],
+                    [0, 0, 1],
+                    [1, 1, 1],
+                    [1, 0, 0],
+                    [1, 1, 1]
+                ],
+                '3': [
+                    [1, 1, 1],
+                    [0, 0, 1],
+                    [1, 1, 1],
+                    [0, 0, 1],
+                    [1, 1, 1]
+                ],
+                '4': [
+                    [1, 0, 1],
+                    [1, 0, 1],
+                    [1, 1, 1],
+                    [0, 0, 1],
+                    [0, 0, 1]
+                ],
+                '5': [
+                    [1, 1, 1],
+                    [1, 0, 0],
+                    [1, 1, 1],
+                    [0, 0, 1],
+                    [1, 1, 1]
+                ],
+                '6': [
+                    [1, 1, 1],
+                    [1, 0, 0],
+                    [1, 1, 1],
+                    [1, 0, 1],
+                    [1, 1, 1]
+                ],
+                '7': [
+                    [1, 1, 1],
+                    [0, 0, 1],
+                    [0, 0, 1],
+                    [0, 0, 1],
+                    [0, 0, 1]
+                ],
+                '8': [
+                    [1, 1, 1],
+                    [1, 0, 1],
+                    [1, 1, 1],
+                    [1, 0, 1],
+                    [1, 1, 1]
+                ],
+                '9': [
+                    [1, 1, 1],
+                    [1, 0, 1],
+                    [1, 1, 1],
+                    [0, 0, 1],
+                    [1, 1, 1]
+                ]
+            };
+            return pixelNumbers[number];
+        }
+
+        function checkCaptcha() {
+            const userInput = document.getElementById("captchaInput").value;
+            const resultElement = document.getElementById("captchaResult");
+            if (userInput === captchaCode) {
+                resultElement.style.color = "green";
+                resultElement.innerHTML = "Правильно!";
+            } else {
+                resultElement.style.color = "red";
+                resultElement.innerHTML = "Помилка";
+            }
+        }
+    </script>
+</head>
+<body onload="initCaptcha(2)">
+    <label>Введіть число</label>
+    <div id="captchaDisplay"></div>
+    <input type="text" id="captchaInput">
+    <div id="captchaResult"></div>
+    <button onclick="checkCaptcha()">Перевірити</button>
+</body>
+</html>

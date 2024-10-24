@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПР3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Перевірка тексту та валідація даних</h1>
+        
+        <div class="task">
+            <h2>Завдання 1: Перевірка наявності слова</h2>
+            <input type="text" id="checkWordInput" placeholder="Введіть текст">
+            <button onclick="checkWord()">Перевірити слово</button>
+            <p id="checkWordResult"></p>
+        </div>
+
+        <div class="task">
+            <h2>Завдання 2: Перевірка телефону</h2>
+            <input type="text" id="phoneInput" placeholder="Введіть номер телефону">
+            <button onclick="checkPhone()">Перевірити номер</button>
+            <p id="phoneResult"></p>
+        </div>
+
+        <div class="task">
+            <h2>Завдання 3: Підрахунок слів</h2>
+            <input type="text" id="wordCountInput" placeholder="Введіть текст">
+            <button onclick="countWords()">Підрахувати слова</button>
+            <p id="wordCountResult"></p>
+        </div>
+
+        <div class="task">
+            <h2>Завдання 4: Валідація пароля</h2>
+            <input type="password" id="passwordInput" placeholder="Введіть пароль">
+            <button onclick="validatePassword()">Перевірити пароль</button>
+            <p id="passwordResult"></p>
+        </div>
+
+        <div class="task">
+            <h2>Завдання 5: Заміна форматів дати</h2>
+            <input type="text" id="dateInput" placeholder="Введіть текст з датами">
+            <button onclick="convertDateFormat()">Перетворити дати</button>
+            <p id="dateResult"></p>
+        </div>
+
+        <div class="task">
+            <h2>Завдання 6: Витяг електронних адрес</h2>
+            <input type="text" id="emailInput" placeholder="Введіть текст з електронними адресами">
+            <button onclick="extractEmails()">Витягти адреси</button>
+            <p id="emailResult"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

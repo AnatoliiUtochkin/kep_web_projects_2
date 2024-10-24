@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПР4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ПР4</h1>
+
+        <div class="task">
+            <h2>1. Годинник</h2>
+            <div id="clock"></div>
+            <button onclick="startClock()">Запустити годинник</button>
+        </div>
+
+        <div class="task">
+            <h2>2. Спливаюче вікно</h2>
+            <button onclick="startPopupClock()">Запустити годинник з попередженням</button>
+        </div>
+
+        <div class="task">
+            <h2>2.2 Закриття сторінки через 30 секунд</h2>
+            <button onclick="startClosePageClock()">Запустити закриття сторінки</button>
+        </div>
+
+        <div class="task">
+            <h2>2.3 Оновлення секунд</h2>
+            <button onclick="startSecondClock()">Запустити секундомір</button>
+            <div id="secondClock"></div>
+        </div>
+
+        <div class="task">
+            <h2>2.4 Оновлення часу з попередженням</h2>
+            <div id="updateTimeDisplay">Поточний час: --:--:--</div>
+            <button onclick="startUpdateTime()">Запустити оновлення часу кожні 30 секунд</button>
+        </div>
+        
+
+        <div class="task">
+            <h2>2.5 Оновлення часу по кнопці</h2>
+            <div id="manualTimeDisplay">Поточний час: --:--:--</div>
+            <button onclick="updateTime()">Оновити час</button>
+        </div>
+
+        <div class="task">
+            <h2>3. Ефект друкарської машинки</h2>
+            <button onclick="startTypingEffect()">Запустити друкарську машинку</button>
+            <div id="typingDisplay"></div>
+        </div>
+
+        <div class="task">
+            <h2>4. Ставка на результат</h2>
+            <input type="number" id="betAmount" placeholder="Введіть ставку">
+            <button onclick="placeBet()">Зробити ставку</button>
+            <div id="betResult"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

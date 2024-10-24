@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Галерея клавіатур</title>
+    <style>
+        #rotator {
+            width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        #rotator img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .nav-buttons button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .nav-buttons button:hover {
+            background-color: #45a049;
+        }
+        #title {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        #description {
+            font-size: 14px;
+            color: grey;
+        }
+    </style>
+    <script>
+        const imagesArray = [
+            {path: 'images/keyboard1.png', title: 'Клавіатура 1', description: 'Геймерська клавіатура'},
+            {path: 'images/keyboard2.webp', title: 'Клавіатура 2', description: 'Механічна клавіатура'},
+            {path: 'images/keyboard3.webp', title: 'Клавіатура 3', description: 'Бездротова клавіатура'}
+        ];
+        let currentImageIndex = 0;
+
+        function initPhotoRotator(containerId, images) {
+            const container = document.getElementById(containerId);
+            const img = document.createElement('img');
+            img.src = images[currentImageIndex].path;
+            container.appendChild(img);
+
+            const title = document.createElement('div');
+            title.id = 'title';
+            title.innerHTML = `${images[currentImageIndex].title}`;
+            container.appendChild(title);
+
+            const description = document.createElement('div');
+            description.id = 'description';
+            description.innerHTML = `${images[currentImageIndex].description}`;
+            container.appendChild(description);
+
+            const nav = document.createElement('div');
+            nav.className = 'nav-buttons';
+            container.appendChild(nav);
+
+            const backBtn = document.createElement('button');
+            backBtn.innerHTML = 'Назад';
+            backBtn.onclick = function() {
+                if (currentImageIndex > 0) {
+                    currentImageIndex--;
+                    updateImage(container, images);
+                }
+            };
+            nav.appendChild(backBtn);
+
+            const nextBtn = document.createElement('button');
+            nextBtn.innerHTML = 'Вперед';
+            nextBtn.onclick = function() {
+                if (currentImageIndex < images.length - 1) {
+                    currentImageIndex++;
+                    updateImage(container, images);
+                }
+            };
+            nav.appendChild(nextBtn);
+        }
+
+        function updateImage(container, images) {
+            container.children[0].src = images[currentImageIndex].path;
+            container.children[1].innerHTML = `${images[currentImageIndex].title}`;
+            container.children[2].innerHTML = `${images[currentImageIndex].description}`;
+        }
+    </script>
+</head>
+<body onload="initPhotoRotator('rotator', imagesArray)">
+    <div id="rotator"></div>
+</body>
+</html>

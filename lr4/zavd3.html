@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблиця множення з радіокнопками</title>
+    <script>
+        let correctAnswer;
+        
+        function generateTask() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            correctAnswer = num1 * num2;
+            const options = [correctAnswer, Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)];
+            options.sort(() => Math.random() - 0.5);
+            document.getElementById("task").innerHTML = `${num1} x ${num2} = ?`;
+            document.getElementsByName("answer").forEach((option, index) => {
+                option.value = options[index];
+                option.nextSibling.textContent = options[index];
+            });
+        }
+
+        function checkAnswer() {
+            const selected = document.querySelector('input[name="answer"]:checked');
+            if (selected && selected.value == correctAnswer) {
+                document.getElementById("result").innerHTML = "Правильно!";
+            } else {
+                document.getElementById("result").innerHTML = "Неправильно!";
+            }
+        }
+    </script>
+</head>
+<body onload="generateTask()">
+    <div id="task"></div>
+    <div>
+        <input type="radio" name="answer" value=""><label></label><br>
+        <input type="radio" name="answer" value=""><label></label><br>
+        <input type="radio" name="answer" value=""><label></label><br>
+    </div>
+    <button onclick="checkAnswer()">Перевірити</button>
+    <div id="result"></div>
+    <button onclick="generateTask()">Наступне завдання</button>
+</body>
+</html>

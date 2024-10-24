@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розклад зустрічей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Розклад зустрічей</h1>
+    
+    <div class="form-container">
+        <h2>Додати нову зустріч</h2>
+        <form id="meetingForm">
+            <label for="topic">Тема зустрічі:</label>
+            <input type="text" id="topic" required><br>
+            
+            <label for="date">Дата зустрічі:</label>
+            <input type="date" id="date" required><br>
+            
+            <label for="time">Час зустрічі:</label>
+            <input type="time" id="time" required><br>
+            
+            <label for="place">Місце:</label>
+            <input type="text" id="place" required><br>
+            
+            <label for="isDone">Проведено:</label>
+            <input type="checkbox" id="isDone"><br>
+            
+            <button type="submit">Додати зустріч</button>
+        </form>
+    </div>
+
+    <h2>Список зустрічей</h2>
+    <ul id="meetingList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

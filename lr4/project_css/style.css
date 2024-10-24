@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #DDDDDD;
+}
+
+body {
+    font-family: Bahnschrift, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+header h1 {
+    margin: 10px;
+    padding-bottom: 20px;
+}
+
+#theme-toggle {
+    background-color: transparent;
+    border: none;
+    color: #bdbdbd;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0px 0px 10px 0px;
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    color: #ccc;
+}
+
+nav {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DDDDDD;
+    padding: 20px;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-container h2 {
+    margin-top: 15px;
+    width: 350px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.left-side,
+.right-side {
+    width: 50%;
+    flex: 1;
+    padding: 0 20px;
+}
+
+.buttons {
+    list-style: none;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.buttons li {
+    margin-bottom: 10px;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons a:hover {
+    background-color: rgba(101, 101, 101, 0.5);
+}
+
+header h1,
+.buttons a,
+nav,
+html {
+    transition: color 0.6s ease, background-color 0.3s ease;
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-side,
+    .right-side {
+        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+    .menu-container h2 {
+        width: auto;
+        text-align: center;
+    }
+    .buttons {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+    .menu-container {
+        flex-direction: row;
+    }
+    .left-side,
+    .right-side {
+        width: 50%;
+    }
+    .menu-container h2 {
+        width: 350px;
+    }
+}
+
+@media only screen and (min-width: 1367px) {
+    .menu-container {
+        flex-direction: row;
+    }
+    .left-side,
+    .right-side {
+        width: 50%;
+    }
+    .menu-container h2 {
+        width: 350px;
+    }
+}
+
